@@ -70,8 +70,8 @@ def evaluate(model, loss_fn, meta_classes, task_type, metrics, params, split):
 
         # move to GPU if available
         if params.cuda:
-            X_sup, Y_sup = X_sup.cuda(async=True), Y_sup.cuda(async=True)
-            X_que, Y_que = X_que.cuda(async=True), Y_que.cuda(async=True)
+            X_sup, Y_sup = X_sup.cuda(), Y_sup.cuda()
+            X_que, Y_que = X_que.cuda(), Y_que.cuda()
 
         # clear previous gradients, compute gradients of all variables wrt loss
         def zero_grad(params):

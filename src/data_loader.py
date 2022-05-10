@@ -128,7 +128,10 @@ class Task(object):
 
     def get_class(self, sample):
         # raise NotImplementedError("This is abstract class")
-        return os.path.join(*sample.split('/')[:-1])
+
+        # incompatible for windows
+        # return os.path.join(*sample.split('/')[:-1])
+        return os.path.dirname(sample)
 
 
 class OmniglotTask(Task):
